@@ -1,0 +1,29 @@
+// Testing borders "tb" being the key selector
+$tb-red: 2px solid red;
+$tb-blue: 2px solid blue;
+$tb-lime: 2px solid lime;
+$tb-orange: 2px solid orange;
+$tb-yellow: 2px solid yellow;
+$tb-black: 2px solid black;
+$tb-cyan: 2px solid cyan;
+
+
+// Primary colors for site
+
+$primary: '';
+$accent: '';
+$danger: '';
+$light: '';
+$dark: '';
+$grey: '';
+
+// Variables for media query
+$phone-sm: 320;
+$phone-md: 375;
+$phone-lg: 414;
+$tablet-sm: 576;
+$tablet-md: 780;
+$tablet-lg: 992;
+$desktop-sm: 1200;
+$desktop-md: 1440;
+$desktop-lg: 1650;
