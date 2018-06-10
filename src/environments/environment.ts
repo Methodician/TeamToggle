@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCcKCE39QHPbxr-jJ_HTlQemJRzQpG6OuI",
+    authDomain: "team-toggle.firebaseapp.com",
+    databaseURL: "https://team-toggle.firebaseio.com",
+    projectId: "team-toggle",
+    storageBucket: "",
+    messagingSenderId: "926109145437"
+  }
 };
 
 /*

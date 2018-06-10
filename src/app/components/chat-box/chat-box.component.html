@@ -1,0 +1,8 @@
+<h1>CHAT BOX:</h1>
+
+<input type="text"
+       (keyup)="chatKeyup($event)">
+
+<ul>
+  <li *ngFor="let chat of chats">text: {{ chat.text }} timestamp: {{ chat.timestamp?.seconds }}</li>
+</ul>
