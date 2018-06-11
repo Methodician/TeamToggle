@@ -1,0 +1,7 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+
+.home-container {
+  height: calc(100vh - 150px);
+  border: $tb-red;
+}

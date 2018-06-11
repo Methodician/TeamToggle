@@ -1,3 +1,16 @@
 <div class="navbar">
-  <button class="button" mat-raised-button color="primary">smash</button>
+  <!-- Logo -->
+  <div class="brand-logo">
+    Logo
+  </div>
+  <!-- Dropdown Nav Button -->
+  <div class="btn-wrapper">
+    <button class="menu-btn" mat-raised-button [matMenuTriggerFor]="menu" color="primary">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </div>
 </div>
