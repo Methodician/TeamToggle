@@ -1,7 +1,109 @@
 @import "../../../scss/vars";
 @import "../../../scss/mixins";
-
+// Home Container Styles
 .home-container {
   height: calc(100vh - 150px);
   border: $tb-red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  overflow-x: hidden;
+  @include respond-to($phone-lg) {
+    padding: 20px;
+  }
+  @include respond-to($tablet-md) {
+    flex-direction: row;
+    justify-content: unset;
+  }
+}
+// Action Button Styles
+.action-btn-wrapper {
+  width: 100%;
+  border: $tb-lime;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin: 10px 0;
+  @include respond-to($tablet-md) {
+    @include size(75px, 100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 10px;
+    margin: 0;
+  }
+}
+.action-btn {
+  @include size(45px);
+  border: $tb-lime;
+  margin: 10px 0;
+  @include respond-to($tablet-md) {
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+}
+// Content Wrapper Styles
+.content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @include respond-to($tablet-md) {
+    height: 100%;
+  }
+}
+// Video Wrapper Styles
+.video-player {
+  @include size(100%, 200px);
+  background-color: orange;
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+  @include respond-to($tablet-md) {
+    margin: 0;
+  }
+} 
+// Player Toggle Button Styles
+.toggle-wrapper {
+  width: 100%;
+  border: $tb-orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin: 10px 0;
+  .toggle-btn {
+    @include size(80px, 20px);
+    border: $tb-orange;
+    margin: 5px;
+  }
+}
+// Ad Space Styles
+.ad-space {
+  @include size(100%, 75px);
+  background-color: cyan;
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+}
+// Chat Wrapper Styles
+.chat-wrapper {
+  @include size(100%, 150px);
+  background-color: orchid;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  @include respond-to($tablet-md) {
+    width: 350px;
+    height: 100%;
+    margin: 0;
+  }
+  @include respond-to($tablet-md) {
+    width: 500px;
+  }
 }
