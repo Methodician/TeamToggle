@@ -21,6 +21,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatBoxComponent } from './components/chat-box/chat-box.component';
+import { StoreComponent } from './components/store/store.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ChatBoxComponent } from './components/chat-box/chat-box.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,
