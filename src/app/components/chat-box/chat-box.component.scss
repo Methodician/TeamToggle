@@ -1,0 +1,85 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+// Main Chat Container
+.chat-container {
+  background-color: #424242;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+// Header
+.chat-header {
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+  color: $primary;
+  align-self: center;
+}
+// Chat Box
+.chat-box {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+  @include respond-to($phone-lg) {
+    height: 350px;
+  }
+  @include respond-to($tablet-sm) {
+    height: 400px;
+  }
+  @include respond-to($tablet-md) {
+    height: 450px;
+  }
+  @include respond-to($tablet-lg) {
+    height: 500px;
+  }
+  @include respond-to($desktop-sm) {
+    height: 545px;
+  }
+}
+// Scroll Bar Styles
+.chat-box::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: $dark-grey;
+}
+.chat-box::-webkit-scrollbar {
+	width: 12px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: $primary;
+}
+// Message styles
+.chat-text {
+  text-align: left;
+  padding: 5px 10px;
+  p {
+    font-size: 14px;
+    line-height: 18px;
+    color: $off-white;
+    .username {
+      color: $primary;
+    }
+  }
+}
+// Text Area Styles
+.chat-input-wrapper {
+  width: 100%;
+  margin-top: 10px;
+  .chat-input {
+    width: 100%;
+  }
+  textarea {
+    max-height: 200px;
+    color: $off-white;
+  }
+}
+// Chat Button
+.chat-btn {
+  color: $off-white;
+  align-self: flex-start;
+}

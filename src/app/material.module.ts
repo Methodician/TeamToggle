@@ -4,6 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 
@@ -14,12 +17,16 @@ import { MatCardModule } from '@angular/material/card';
     MatMenuModule,
     MatIconModule,
     MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   exports: [
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
     MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: []
 })

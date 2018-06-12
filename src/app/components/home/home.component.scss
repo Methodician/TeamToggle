@@ -3,7 +3,6 @@
 // Home Container Styles
 .home-container {
   height: 100%;
-  border: $tb-red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +22,6 @@
 // Action Button Styles
 .action-btn-wrapper {
   width: 100%;
-  // border: $tb-lime;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,11 +81,16 @@
     margin: 0;
     height: 350px;
   }
+  @include respond-to($desktop-sm) {
+    height: 450px;
+  }
+  @include respond-to($desktop-md) {
+    height: 550px;
+  }
 } 
 // Player Toggle Button Styles
 .toggle-wrapper {
   width: 100%;
-  // border: $tb-orange;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -116,18 +119,23 @@
 }
 // Chat Wrapper Styles
 .chat-wrapper {
-  @include size(100%, 150px);
-  background-color: orchid;
-  color: white;
+  width: 100%;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
   @include respond-to($tablet-md) {
-    width: 350px;
+    width: 500px;
     height: 100%;
     margin: 0;
+    padding: 0 10px;
   }
   @include respond-to($tablet-lg) {
-    width: 500px;
+    padding: 0 20px;
+  }
+  @include respond-to($desktop-sm) {
+    width: 600px;
+  }
+  @include respond-to($desktop-md) {
+    width: 700px;
   }
 }
