@@ -56,6 +56,12 @@
 .price {
   color: $danger;
 }
+.btn-wrapper {
+  margin: 0;
+}
+.buy-btn {
+  color: $off-white;
+}
 // Ad Space 
 .ad-space {
   @include size(100%, 100px);
