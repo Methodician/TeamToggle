@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 
 @Component({
@@ -14,20 +14,19 @@ export class ChatBoxComponent implements OnInit {
   ngOnInit() {
     this.chatSvc.chats.subscribe(chats => {
       this.chats = chats;
-      console.log(chats);
     });
   }
 
   chatKeyup(e: any) {
     if (e.key == 'Enter') {
-      this.addChat(e.target.value);
-      e.target.value = '';
+      this.addChat(e.target);
     }
   }
 
-  addChat(text: any) {
-    console.log(text);
-    this.chatSvc.addChat(text);
+  addChat(input: any) {
+    const text = input.value;
+    this.chatSvc.addChat(text, 'd00djoe');
+    input.value = '';
   }
 
 }

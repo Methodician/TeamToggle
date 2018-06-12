@@ -5,20 +5,26 @@
   </div>
   <!-- Chat Box with global messages -->
   <div class="chat-box">
-    <div class="chat-text" *ngFor="let chat of chats">
-      <p><span class="username">d00djoe</span>: text: {{ chat.text }} timestamp: {{ chat.timestamp?.seconds }}</p>
+    <div class="chat-text"
+         *ngFor="let chat of chats">
+      <p>
+        <span class="username">{{ chat.userName }}</span>: text: {{ chat.text }} timestamp: {{ chat.timestamp?.seconds }}</p>
     </div>
   </div>
   <!-- Chat Textarea Input -->
   <div class="chat-input-wrapper">
-    <mat-form-field class="chat-input" color="primary">
-      <textarea 
-      matInput 
-      (keyup)="chatKeyup($event)" 
-      placeholder="Send a Message">
+    <mat-form-field class="chat-input"
+                    color="primary">
+      <textarea #chatInput
+                matInput
+                (keyup)="chatKeyup($event)"
+                placeholder="Send a Message">
     </textarea>
     </mat-form-field>
   </div>
   <!-- Chat Button -->
-  <button class="chat-btn" mat-raised-button color="primary">Chat</button>
+  <button class="chat-btn"
+          mat-raised-button
+          color="primary"
+          (click)="addChat(chatInput)">Chat</button>
 </div>
