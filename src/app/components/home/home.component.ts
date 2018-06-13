@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ViewChild } from '@angular/core';
 
 @Component({
@@ -6,29 +6,43 @@ import { ViewChild } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('mainVid') mainVid: any;
   vids = {
     vid1: '../../../assets/vid1.mp4',
     vid2: '../../../assets/vid2.mp4',
     vid3: '../../../assets/vid3.mp4',
     vid4: '../../../assets/vid4.mp4',
-  }
+  };
 
   isFavorite: boolean = false;
   favoriteIcon: string = 'favorite_border';
   selectedVidKey = 'vid1';
   currentTime;
 
+  videoArray;
+
   constructor() { }
 
   ngOnInit() {
+  }
 
+  ngAfterViewInit() {
+    this.videoArray = document.getElementsByTagName('video');
+    this.test();
+  }
+
+  test() {
+    // this.videoArray[0].play();
+    this.videoArray[1].play();
+    this.videoArray[2].play();
+    this.videoArray[3].play();
   }
 
   setFavorite() {
     this.isFavorite = !this.isFavorite;
     this.isFavorite ? this.favoriteIcon = 'favorite' : this.favoriteIcon = 'favorite_border';
+    console.log(this.videoArray[0]);
   }
 
   pickVid(key) {

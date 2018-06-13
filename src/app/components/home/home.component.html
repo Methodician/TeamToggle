@@ -19,7 +19,7 @@
     <div class="content-wrapper">
       <div class="video-player">
         <video class="main-video" #mainVid
-          *ngFor="let key of vids | keys"
+          *ngFor="let key of vids | keys; let i = index"
           [hidden]="key != selectedVidKey"
           [muted]="key != selectedVidKey"
           controls
