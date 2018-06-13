@@ -26,15 +26,12 @@
     height: 350px;
   }
   @include respond-to($tablet-sm) {
-    height: 400px;
-  }
-  @include respond-to($tablet-md) {
-    height: 450px;
-  }
-  @include respond-to($tablet-lg) {
-    height: 500px;
+    height: 405px;
   }
   @include respond-to($desktop-sm) {
+    height: 445px;
+  }
+  @include respond-to($desktop-md) {
     height: 545px;
   }
 }
