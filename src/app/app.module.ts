@@ -16,6 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Angular Matieral Component Module
 import { MaterialModule } from './material.module';
 
+// Pipes
+import { KeysPipe } from './keys.pipe';
+
 // Components
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -27,6 +30,7 @@ import { StoreComponent } from './components/store/store.component';
 @NgModule({
   declarations: [
     AppComponent,
+    KeysPipe,
     HomeComponent,
     NavbarComponent,
     FooterComponent,

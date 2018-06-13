@@ -70,8 +70,7 @@
 // Video Wrapper Styles
 .video-player {
   @include size(100%, 200px);
-  background-color: orange;
-  color: white;
+  // background-color: orange;
   text-align: center;
   margin: 10px 0;
   @include respond-to($phone-lg) {
@@ -91,6 +90,10 @@
     height: 550px;
   }
 } 
+.main-video {
+  height: 100%;
+  width: 100%;
+}
 // Player Toggle Button Styles
 .toggle-wrapper {
   width: 100%;

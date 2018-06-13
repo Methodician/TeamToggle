@@ -17,12 +17,20 @@
     </div>
     <!-- Video Player, Toggle Buttons, Ad Space -->
     <div class="content-wrapper">
-      <div class="video-player">Video Player</div>
+      <div class="video-player">
+        <video class="main-video" #mainVid
+          *ngFor="let key of vids | keys"
+          [hidden]="key != selectedVidKey"
+          [muted]="key != selectedVidKey"
+          controls
+          loop
+          autoplay>
+          <source type="video/mp4" [src]="vids[key]"> Your browser does not support HTML5 video tags. Please use a newer browser.
+      </video>
+      </div>
       <div class="toggle-wrapper">
-        <button mat-raised-button color="primary" class="toggle-btn">Player Name</button>
-        <button mat-raised-button color="primary" class="toggle-btn">Player Name</button>
-        <button mat-raised-button color="primary" class="toggle-btn">Player Name</button>
-        <button mat-raised-button color="primary" class="toggle-btn">Player Name</button>
+        <button mat-raised-button color="primary" class="toggle-btn" *ngFor="let key of vids | keys" (click)="pickVid(key)">{{key}}</button>
+    
       </div>
       <div class="ad-space">
         Ad Space
