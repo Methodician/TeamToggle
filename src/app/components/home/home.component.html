@@ -1,43 +1,51 @@
-  <!-- Home Container -->
-  <div class="home-container">
-    <!-- Action Buttons -->
-    <div class="action-btn-wrapper">
-      <a class="action-btn">
-        <i class="material-icons">share</i>
-      </a>
-      <a class="action-btn" (click)="setFavorite()">
-        <i class="material-icons" [ngClass]="{'favorite': isFavorite}">{{favoriteIcon}}</i>
-      </a>
-      <a class="action-btn" routerLink="/store">
-        <i class="material-icons">store</i>
-      </a>
-      <a class="action-btn">
-        <i class="material-icons">monetization_on</i>
-      </a>
-    </div>
-    <!-- Video Player, Toggle Buttons, Ad Space -->
-    <div class="content-wrapper">
-      <div class="video-player">
-        <video class="main-video" #mainVid
-          *ngFor="let key of vids | keys; let i = index"
-          [hidden]="key != selectedVidKey"
-          [muted]="key != selectedVidKey"
-          controls
-          loop
-          autoplay>
-          <source type="video/mp4" [src]="vids[key]"> Your browser does not support HTML5 video tags. Please use a newer browser.
+<!-- Home Container -->
+<div class="home-container">
+  <!-- Action Buttons -->
+  <div class="action-btn-wrapper">
+    <a class="action-btn">
+      <i class="material-icons">share</i>
+    </a>
+    <a class="action-btn"
+       (click)="setFavorite()">
+      <i class="material-icons"
+         [ngClass]="{'favorite': isFavorite}">{{favoriteIcon}}</i>
+    </a>
+    <a class="action-btn"
+       routerLink="/store">
+      <i class="material-icons">store</i>
+    </a>
+    <a class="action-btn">
+      <i class="material-icons">monetization_on</i>
+    </a>
+  </div>
+  <!-- Video Player, Toggle Buttons, Ad Space -->
+  <div class="content-wrapper">
+    <div class="video-player">
+      <video class="main-video"
+             #mainVid
+             *ngFor="let key of vids | keys; let i = index"
+             controls
+             loop
+             preload="metadata"
+             autoplay>
+        <source type="video/mp4"
+                [src]="vids[key]"> Your browser does not support HTML5 video tags. Please use a newer browser.
       </video>
-      </div>
-      <div class="toggle-wrapper">
-        <button mat-raised-button color="primary" class="toggle-btn" *ngFor="let key of vids | keys" (click)="pickVid(key)">{{key}}</button>
-    
-      </div>
-      <div class="ad-space">
-        Ad Space
-      </div>
     </div>
-    <!-- Chat Wrapper -->
-    <div class="chat-wrapper">
-      <app-chat-box></app-chat-box>
+    <div class="toggle-wrapper">
+      <button mat-raised-button
+              color="primary"
+              class="toggle-btn"
+              *ngFor="let key of vids | keys"
+              (click)="pickVid(key)">{{key}}</button>
+
+    </div>
+    <div class="ad-space">
+      Ad Space
     </div>
   </div>
+  <!-- Chat Wrapper -->
+  <div class="chat-wrapper">
+    <app-chat-box></app-chat-box>
+  </div>
+</div>
