@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 // AngularFire
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 // Animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,7 +44,8 @@ import { StoreComponent } from './components/store/store.component';
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

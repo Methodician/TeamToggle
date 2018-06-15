@@ -7,20 +7,19 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  @ViewChild('mainVid') mainVid: any;
-  vids = {
-    vid1: '../../../assets/vid1.mp4',
-    vid2: '../../../assets/vid2.mp4',
-    vid3: '../../../assets/vid3.mp4',
-    vid4: '../../../assets/vid4.mp4',
-  };
-
   isFavorite: boolean = false;
   favoriteIcon: string = 'favorite_border';
-  selectedVidKey = 'vid1';
-  currentTime;
+  selectedVidIndex = 0;
+  currentTime: number;
+  videoArray: NodeListOf<HTMLVideoElement>;
+  vids = {
+    vid1: 'https://firebasestorage.googleapis.com/v0/b/team-toggle.appspot.com/o/vid1.mp4?alt=media&token=2b70a003-1c6f-495e-bbab-d5537c2054b3',
+    vid2: 'https://firebasestorage.googleapis.com/v0/b/team-toggle.appspot.com/o/vid2.mp4?alt=media&token=b5d0f3ee-c61c-4dbb-8344-4b0487625b93',
+    vid3: 'https://firebasestorage.googleapis.com/v0/b/team-toggle.appspot.com/o/vid3.mp4?alt=media&token=ea7c6076-13be-46f7-b438-1d327ba5f1c0',
+    vid4: 'https://firebasestorage.googleapis.com/v0/b/team-toggle.appspot.com/o/vid4.mp4?alt=media&token=d2edbb75-0ee4-48fb-b667-f94ae6f4b969',
+  };
 
-  videoArray;
+
 
   constructor() { }
 
@@ -29,50 +28,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.videoArray = document.getElementsByTagName('video');
-    this.test();
-  }
-
-  test() {
-    // this.videoArray[0].play();
-    this.videoArray[1].play();
-    this.videoArray[2].play();
-    this.videoArray[3].play();
+    this.videoArray[this.selectedVidIndex].play();
   }
 
   setFavorite() {
     this.isFavorite = !this.isFavorite;
     this.isFavorite ? this.favoriteIcon = 'favorite' : this.favoriteIcon = 'favorite_border';
-    console.log(this.videoArray[0]);
   }
 
-  pickVid(key) {
-    // this.currentTime = this.mainVid.nativeElement.currentTime;
-    // console.log('current time initially set', this.currentTime);
-    this.selectedVidKey = key;
-    // console.log('current time after vid change', this.currentTime)
-    // this.mainVid.nativeElement.addEventListener('canplay', () => { this.changeCurrentTime() });
-
-    // console.log(this.mainVid.nativeElement.currentTime);
+  pickVid(index: number) {
+    const currentTime = this.videoArray[this.selectedVidIndex].currentTime;
+    this.videoArray[this.selectedVidIndex].pause();
+    this.selectedVidIndex = index
+    this.videoArray[index].currentTime = currentTime;
+    this.videoArray[index].play();
   }
 
-  shouldHide(key) {
-    console.log(key);
-    console.log(this.selectedVidKey);
-    console.log(this.selectedVidKey == key);
-    return !this.selectedVidKey == key;
-  }
-
-  changeCurrentTime() {
-    // this.vidElement = this.mainVid.nativeElement;
-    // console.log('event target current time', e.target.currentTime);
-    console.log('current time inside event listener', this.currentTime);
-    console.log('vid element inside event listener', this.mainVid.nativeElement.currentTime);
-    this.mainVid.nativeElement.currentTime = this.currentTime;
-    console.log('vid element inside event listener', this.mainVid.nativeElement.currentTime);
-
-    // console.log(this.currentTime);
-    // console.log(e.target.currentTime);
-    // console.log(this.currentTime);
-    // vid.play();
-  }
 }
