@@ -48,7 +48,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.videoArray[this.selectedVidIndex].pause();
     this.selectedVidIndex = index
     this.videoArray[index].currentTime = currentTime;
-    this.videoArray[index].play();
+    setTimeout(() => {
+      this.videoArray[index].play();
+    }, 100);
   }
 
 }
