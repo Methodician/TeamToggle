@@ -89,6 +89,11 @@
   @include respond-to($desktop-md) {
     height: 550px;
   }
+  .watch-btn {
+    color: $off-white;
+    border: $tb-orange;
+    top: 45%;
+  }
 } 
 .main-video {
   height: 100%;

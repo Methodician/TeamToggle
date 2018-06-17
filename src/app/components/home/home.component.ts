@@ -7,6 +7,7 @@ import { ViewChild } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  interactionConfirmed = false;
   isFavorite: boolean = false;
   favoriteIcon: string = 'favorite_border';
   selectedVidIndex = 0;
@@ -28,7 +29,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.videoArray = document.getElementsByTagName('video');
-    this.videoArray[this.selectedVidIndex].play();
+  }
+
+  confirmInteraction() {
+    this.interactionConfirmed = true;
+    setTimeout(() => {
+      this.videoArray[this.selectedVidIndex].play();
+    }, 500);
   }
 
   setFavorite() {
