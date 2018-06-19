@@ -1,3 +1,15 @@
+<!-- Testing full-screen -->
+<div *ngIf="interactionConfirmed">
+  <div class="video-player-fs"
+       *ngFor="let key of vids | keys; let i = index"
+       [hidden]="i != selectedVidIndex">
+    <video class="main-video"
+           loop>
+      <source type="video/mp4"
+              [src]="vids[key]"> Your browser does not support HTML5 video tags. Please use a newer browser.
+    </video>
+  </div>
+</div>
 <!-- Home Container -->
 <div class="home-container">
   <!-- Action Buttons -->
@@ -27,7 +39,7 @@
               class="watch-btn"
               (click)="confirmInteraction()">Ready to watch?</button>
     </div>
-    <div *ngIf="interactionConfirmed">
+    <!-- <div *ngIf="interactionConfirmed">
       <div class="video-player"
            *ngFor="let key of vids | keys; let i = index"
            [hidden]="i != selectedVidIndex">
@@ -37,7 +49,7 @@
                   [src]="vids[key]"> Your browser does not support HTML5 video tags. Please use a newer browser.
         </video>
       </div>
-    </div>
+    </div> -->
 
     <div class="toggle-wrapper"
          *ngIf="interactionConfirmed">
