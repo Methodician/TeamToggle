@@ -15,9 +15,12 @@ export class ChatService {
   constructor(private db: AngularFirestore) { this.getChats() }
 
   getChats() {
-    this.chatsRef = this.db.collection('chats').valueChanges();
+    this.chatsRef = this.db.collection('chats', ref =>
+      ref.orderBy('timestamp', 'desc')
+        .limit(100)
+    ).valueChanges();
     this.chatsRef.subscribe(chats => {
-      this.chats.next(chats);
+      this.chats.next(chats.reverse());
     })
   }
 

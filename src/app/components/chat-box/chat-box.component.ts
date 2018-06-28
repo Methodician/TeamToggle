@@ -7,6 +7,7 @@ import { ChatService } from '../../services/chat.service';
   styleUrls: ['./chat-box.component.scss']
 })
 export class ChatBoxComponent implements OnInit {
+  @ViewChild('chatbox') chatbox;
   chats: any;
 
   constructor(private chatSvc: ChatService) { }
@@ -14,7 +15,11 @@ export class ChatBoxComponent implements OnInit {
   ngOnInit() {
     this.chatSvc.chats.subscribe(chats => {
       this.chats = chats;
+      this.scrollChatsToBottom();
     });
+    setTimeout(() => {
+      this.scrollChatsToBottom();
+    }, 1000);
   }
 
   chatKeyup(e: any) {
@@ -27,6 +32,10 @@ export class ChatBoxComponent implements OnInit {
     const text = input.value;
     this.chatSvc.addChat(text, 'd00djoe');
     input.value = '';
+  }
+
+  scrollChatsToBottom() {
+    this.chatbox.nativeElement.scrollTop = this.chatbox.nativeElement.scrollHeight;
   }
 
 }
