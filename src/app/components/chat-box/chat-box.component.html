@@ -1,15 +1,31 @@
 <div class="chat-container">
   <!-- Chat Header -->
   <div class="chat-header">
-    Chat
+    Chatting As:
+  </div>
+  <div *ngIf="currentUser"
+       [style.color]="currentUser.color">
+    {{ currentUser.name }}
   </div>
   <!-- Chat Box with global messages -->
   <div class="chat-box"
        #chatbox>
+    <!-- <div class="chat-text"
+         *ngFor="let user of users">
+      <p>
+        <span class="username"
+              [style.color]="user.color">{{user.name}}</span>
+        active: {{user.active}} color: {{user.color}}
+      </p>
+    </div> -->
     <div class="chat-text"
          *ngFor="let chat of chats">
       <p>
-        <span class="username">{{ chat.userName }}</span>: text: {{ chat.text }} timestamp: {{ chat.timestamp?.seconds }}</p>
+        <span class="username"
+              [style.color]="chat.userInfo.color">
+          {{ chat.userInfo.name }}
+        </span>: {{ chat.text }}
+      </p>
     </div>
   </div>
   <!-- Chat Textarea Input -->

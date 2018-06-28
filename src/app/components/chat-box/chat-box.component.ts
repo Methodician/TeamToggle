@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 
 @Component({
@@ -9,10 +9,16 @@ import { ChatService } from '../../services/chat.service';
 export class ChatBoxComponent implements OnInit {
   @ViewChild('chatbox') chatbox;
   chats: any;
+  currentUser;
+  users;
 
   constructor(private chatSvc: ChatService) { }
 
   ngOnInit() {
+    this.chatSvc.activeUser.subscribe(user => {
+      this.currentUser = user;
+    });
+    this.chatSvc.currentUsers.subscribe(users => this.users = users);
     this.chatSvc.chats.subscribe(chats => {
       this.chats = chats;
       this.scrollChatsToBottom();
@@ -30,7 +36,7 @@ export class ChatBoxComponent implements OnInit {
 
   addChat(input: any) {
     const text = input.value;
-    this.chatSvc.addChat(text, 'd00djoe');
+    this.chatSvc.addChat(text);
     input.value = '';
   }
 
