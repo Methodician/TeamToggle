@@ -1,0 +1,24 @@
+<div class="store-container">
+  <!-- Hero -->
+  <div class="store-hero">
+    Hero Container
+  </div>
+  <!-- Card Wrapper -->
+  <div class="store-item-wrapper">
+    <!-- Card with ngFor Loop -->
+    <mat-card class="store-card" *ngFor="let card of cardData">
+      <img mat-card-image src="{{card.img}}" alt="t-shirt">
+      <mat-card-content>
+        <p>{{card.description}}</p>
+        <p class="price">{{card.price}}</p>
+      </mat-card-content>
+      <mat-card-actions class="btn-wrapper">
+        <button class="buy-btn" mat-raised-button color="primary">Buy </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <!-- Ad Space -->
+  <div class="ad-space">
+    Ad Space
+  </div>
+</div>

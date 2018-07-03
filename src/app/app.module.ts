@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 // AngularFire
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 // Animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,20 +18,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Angular Matieral Component Module
 import { MaterialModule } from './material.module';
 
+// Pipes
+import { KeysPipe } from './keys.pipe';
+
 // Components
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatBoxComponent } from './components/chat-box/chat-box.component';
+import { StoreComponent } from './components/store/store.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    KeysPipe,
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,9 @@ import { ChatBoxComponent } from './components/chat-box/chat-box.component';
     BrowserAnimationsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

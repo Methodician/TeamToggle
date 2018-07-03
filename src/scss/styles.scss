@@ -5,3 +5,13 @@
 @import "./vars";
 @import "./mixins";
 
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $dark-grey;
+}
+

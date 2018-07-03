@@ -1,0 +1,76 @@
+@import "../../../scss/vars";
+@import "../../../scss/mixins";
+// Store Container
+.store-container {
+  // border: $tb-red;
+  padding: 10px;
+  @include respond-to($phone-lg) {
+    padding: 20px;
+  }
+}
+// Hero Container
+.store-hero {
+  @include size(100%, 200px);
+  background-color: orchid;
+  color: white;
+  @include respond-to($tablet-sm) {
+    height: 250px;
+  }
+  @include respond-to($tablet-lg) {
+    height: 300px;
+  }
+}
+// Card Wrapper
+.store-item-wrapper {
+  // border: $tb-lime;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  @include respond-to($tablet-md) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px 0;
+  }
+}
+// Card Styles
+.store-card {
+  max-width: 250px;
+  margin: 10px 0;
+  @include respond-to($phone-lg) {
+    max-width: 300px;
+  }
+  @include respond-to($tablet-sm) {
+    max-width: 350px;
+  }
+  @include respond-to($tablet-md) {
+    max-width: 250px;
+    margin: 20px;
+  }
+  @include respond-to($tablet-lg) {
+    max-width: 300px;
+  }
+}
+.price {
+  color: $danger;
+}
+.btn-wrapper {
+  margin: 0;
+}
+.buy-btn {
+  color: $off-white;
+}
+// Ad Space 
+.ad-space {
+  @include size(100%, 100px);
+  background-color: cyan;
+  color: white;
+  @include respond-to($tablet-sm) {
+    height: 125px;
+  }
+  @include respond-to($tablet-lg) {
+    height: 150px;
+  }
+}
