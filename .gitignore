@@ -37,3 +37,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# foolish copy from https://github.com/firebase/functions-samples/blob/master/.gitignore
+**/node_modules/*
+**/.firebaserc
+*/npm-debug.log
+**/package-lock.json
