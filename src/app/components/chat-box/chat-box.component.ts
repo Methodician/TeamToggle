@@ -25,7 +25,7 @@ export class ChatBoxComponent implements OnInit {
     });
     setTimeout(() => {
       this.scrollChatsToBottom();
-    }, 1000);
+    }, 2000);
   }
 
   chatKeyup(e: any) {
