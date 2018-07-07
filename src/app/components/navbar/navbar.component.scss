@@ -2,24 +2,30 @@
 @import '../../../scss/mixins';
 
 .navbar {
-  padding: 20px 20px 0 20px;
+  border: $tb-red;
+  width: 100%;
+  height: 70px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.banner-ad {
+  height: 40px;
+  width: 175px;
 }
 
 .logo {
-  font-size: 32px;
-  color: $off-white;
-  cursor: pointer;
-}
-
-.brand-logo {
-  @include size(45px);
+  @include size(40px);
   border: $tb-red;
 }
 
-.menu-btn {
-  color: $off-white;
-  padding: 0 !important;
+.store-btn {
+  @include size(40px);
+  i {
+    color: $off-white;
+  }
 }
+

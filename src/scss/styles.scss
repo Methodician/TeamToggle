@@ -15,3 +15,9 @@ body {
   background-color: $dark-grey;
 }
 
+.mat-fab {
+  .mat-button-wrapper {
+    padding: 0 !important;
+  }
+}
+

@@ -1,47 +1,30 @@
 <div class="chat-container">
   <!-- Chat Header -->
-  <div class="chat-header">
-    Chatting As:
-  </div>
-  <div *ngIf="currentUser"
-       [style.color]="currentUser.color">
-    {{ currentUser.name }}
+  <div class="chat-header-wrapper">
+    <div class="chat-header">
+      Chatting As:
+    </div>
+    <div class="chat-name" *ngIf="currentUser" [style.color]="currentUser.color">
+      {{ currentUser.name }}
+    </div>
   </div>
   <!-- Chat Box with global messages -->
-  <div class="chat-box"
-       #chatbox>
-    <!-- <div class="chat-text"
-         *ngFor="let user of users">
+  <div class="chat-box" #chatbox>
+    <div class="chat-text" *ngFor="let chat of chats">
       <p>
-        <span class="username"
-              [style.color]="user.color">{{user.name}}</span>
-        active: {{user.active}} color: {{user.color}}
-      </p>
-    </div> -->
-    <div class="chat-text"
-         *ngFor="let chat of chats">
-      <p>
-        <span class="username"
-              [style.color]="chat.userInfo.color">
+        <span class="username" [style.color]="chat.userInfo.color">
           {{ chat.userInfo.name }}
-        </span>: {{ chat.text }}
+        </span>
+        : {{ chat.text }}
       </p>
     </div>
   </div>
   <!-- Chat Textarea Input -->
   <div class="chat-input-wrapper">
-    <mat-form-field class="chat-input"
-                    color="primary">
-      <textarea #chatInput
-                matInput
-                (keyup)="chatKeyup($event)"
-                placeholder="Send a Message">
-    </textarea>
+    <mat-form-field class="chat-input" color="primary">
+      <textarea #chatInput matInput (keyup)="chatKeyup($event)" placeholder="Send a Message"></textarea>
     </mat-form-field>
+    <!-- Chat Button -->
+  <button class="chat-btn" mat-raised-button color="primary" (click)="addChat(chatInput)">Chat</button>
   </div>
-  <!-- Chat Button -->
-  <button class="chat-btn"
-          mat-raised-button
-          color="primary"
-          (click)="addChat(chatInput)">Chat</button>
 </div>

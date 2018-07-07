@@ -3,38 +3,61 @@
 // Main Chat Container
 .chat-container {
   background-color: #424242;
-  border-radius: 5px;
-  padding: 20px;
+  padding: 5px 10px 10px 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around
+  // justify-content: space-between;
 }
 // Header
+.chat-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid yellow;
+}
 .chat-header {
-  font-size: 22px;
-  padding: 10px;
-  text-align: center;
+  font-size: 12px;
   color: $primary;
-  align-self: center;
+}
+.chat-name {
+  margin-left: 10px;
+  font-size: 12px;
 }
 // Chat Box
 .chat-box {
-  height: 300px;
+  height: 60px;
   overflow-y: scroll;
-  padding: 10px;
-  @include respond-to($phone-lg) {
-    height: 350px;
-  }
-  @include respond-to($tablet-sm) {
-    height: 405px;
-  }
-  @include respond-to($desktop-sm) {
-    height: 445px;
-  }
-  @include respond-to($desktop-md) {
-    height: 545px;
+  padding: 10px 5px 5px 5px;
+  font-size: 8px;
+  margin: 10px 0;
+  // border: 1px solid lime;
+  @include respond-to($phone-md) {
+    height: 80px;
   }
 }
+// Text Area Styles
+.chat-input-wrapper {
+  // margin-top: 5px;
+  // border: 1px solid orchid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .chat-input {
+    width: 65%;
+    font-size: 8px;
+  }
+  textarea {
+    max-height: 200px;
+    color: $off-white;
+  }
+  // Chat Button
+  .chat-btn {
+    color: $off-white;
+    font-size: 12px;
+    padding: 0 !important;
+  }
+}
+
 // Scroll Bar Styles
 .chat-box::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
@@ -53,30 +76,11 @@
 // Message styles
 .chat-text {
   text-align: left;
-  padding: 5px 10px;
+  padding: 5px;
   p {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 8px;
+    line-height: 12px;
     color: $off-white;
-    .username {
-      color: $primary;
-    }
+    margin: 0;
   }
-}
-// Text Area Styles
-.chat-input-wrapper {
-  width: 100%;
-  margin-top: 10px;
-  .chat-input {
-    width: 100%;
-  }
-  textarea {
-    max-height: 200px;
-    color: $off-white;
-  }
-}
-// Chat Button
-.chat-btn {
-  color: $off-white;
-  align-self: flex-start;
 }
