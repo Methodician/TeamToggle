@@ -10,30 +10,42 @@
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: flex-start;
-  // padding: 10px;
   overflow-x: hidden;
   overflow-y: hidden;
-  border: $tb-cyan;
   position: relative;
   @include respond-to($phone-lg) {
-    // padding: 20px;
   }
   @include respond-to($tablet-md) {
-    // flex-direction: row;
-    // justify-content: unset;
-    // align-items: flex-start;
-    // padding-bottom: 150px;
   }
 }
-.test {
-  @include size(25px);
+.content-wrapper {
   background-color: yellow;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 46%;
+  @include respond-to($phone-md) {
+    height: 50%;
+  }
+  @include respond-to($tablet-sm) {
+    height: 52%;
+  }
+  @include respond-to($desktop-sm) {
+    height: 56%;
+  }
+}
+.chat-wrapper {
+  width: 100%;
+  height: 40%;
+  text-align: center;
   position: fixed;
   bottom: 0;
+  left: 0;
+  opacity: .5;
+  @include respond-to($desktop-sm) {
+    height: 35%;
+  }
 }
 // Action Button Styles
 // .action-btn-wrapper {
@@ -73,108 +85,74 @@
 // }
 // Content Wrapper Styles
 .content-wrapper {
-  // width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
-  // align-items: center;
-  // // border: $tb-orange;
-  // @include respond-to($tablet-md) {
-  //   height: 100%;
-  //   justify-content: space-between;
-  // }
 }
 // Video Wrapper Styles
-.video-player {
-  @include size(100%, 200px);
-  // background-color: orange;
-  text-align: center;
-  margin: 10px 0;
-  @include respond-to($phone-lg) {
-    height: 250px;
-  }
-  @include respond-to($tablet-sm) {
-    height: 300px;
-  }
-  @include respond-to($tablet-md) {
-    margin: 0;
-    height: 350px;
-  }
-  @include respond-to($desktop-sm) {
-    height: 450px;
-  }
-  @include respond-to($desktop-md) {
-    height: 550px;
-  }
-  .watch-btn {
-    color: $off-white;
-    border: $tb-orange;
-    top: 45%;
-  }
-}
+// .video-player {
+//   @include size(100%, 200px);
+//   // background-color: orange;
+//   text-align: center;
+//   margin: 10px 0;
+//   @include respond-to($phone-lg) {
+//     height: 250px;
+//   }
+//   @include respond-to($tablet-sm) {
+//     height: 300px;
+//   }
+//   @include respond-to($tablet-md) {
+//     margin: 0;
+//     height: 350px;
+//   }
+//   @include respond-to($desktop-sm) {
+//     height: 450px;
+//   }
+//   @include respond-to($desktop-md) {
+//     height: 550px;
+//   }
+//   .watch-btn {
+//     color: $off-white;
+//     border: $tb-orange;
+//     top: 45%;
+//   }
+// }
 // Full-Screen Video Wrapper Styles
-.video-player-fs {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
-.main-video {
-  height: 100%;
-  width: 100%;
-}
+// .video-player-fs {
+//   position: fixed;
+//   right: 0;
+//   bottom: 0;
+//   min-width: 100%;
+//   min-height: 100%;
+// }
+// .main-video {
+//   height: 100%;
+//   width: 100%;
+// }
 // Player Toggle Button Styles
-.toggle-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 10px 0;
-  .toggle-btn {
-    color: $off-white;
-    border: $tb-orange;
-    margin: 5px;
-    @include respond-to($tablet-md) {
-      margin: 10px;
-    }
-  }
-}
-// Ad Space Styles
-.ad-space {
-  @include size(100%, 75px);
-  background-color: cyan;
-  color: white;
-  text-align: center;
-  margin: 10px 0;
-  @include respond-to($tablet-md) {
-    height: 150px;
-    margin: 0;
-  }
-}
+// .toggle-wrapper {
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   margin: 10px 0;
+//   .toggle-btn {
+//     color: $off-white;
+//     border: $tb-orange;
+//     margin: 5px;
+//     @include respond-to($tablet-md) {
+//       margin: 10px;
+//     }
+//   }
+// }
+// // Ad Space Styles
+// .ad-space {
+//   @include size(100%, 75px);
+//   background-color: cyan;
+//   color: white;
+//   text-align: center;
+//   margin: 10px 0;
+//   @include respond-to($tablet-md) {
+//     height: 150px;
+//     margin: 0;
+//   }
+// }
 // Chat Wrapper Styles
-.chat-wrapper {
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  // margin-top: 10px;
-  // margin-bottom: 20px;
-  // @include respond-to($tablet-md) {
-  //   width: 500px;
-  //   height: 100%;
-  //   margin: 0;
-  //   padding: 0 10px;
-  // }
-  // @include respond-to($tablet-lg) {
-  //   padding: 0 20px;
-  // }
-  // @include respond-to($desktop-sm) {
-  //   width: 600px;
-  // }
-  // @include respond-to($desktop-md) {
-  //   width: 700px;
-  // }
-}

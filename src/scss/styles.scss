@@ -21,3 +21,9 @@ body {
   }
 }
 
+
+.mat-raised-button {
+  .mat-button-wrapper {
+    padding: 0 !important;
+  }
+}
