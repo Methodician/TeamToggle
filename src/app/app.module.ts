@@ -24,7 +24,6 @@ import { KeysPipe } from './keys.pipe';
 // Components
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ChatBoxComponent } from './components/chat-box/chat-box.component';
 import { StoreComponent } from './components/store/store.component';
 import { VideoWrapperComponent } from './components/video-wrapper/video-wrapper.component';
@@ -37,7 +36,6 @@ import { VideoWrapperFSComponent } from './components/video-wrapper-fs/video-wra
     KeysPipe,
     HomeComponent,
     NavbarComponent,
-    FooterComponent,
     ChatBoxComponent,
     StoreComponent,
     VideoWrapperComponent,
