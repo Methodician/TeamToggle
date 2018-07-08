@@ -13,10 +13,6 @@
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
-  @include respond-to($phone-lg) {
-  }
-  @include respond-to($tablet-md) {
-  }
 }
 .content-wrapper {
   background-color: yellow;
@@ -30,6 +26,7 @@
   }
   @include respond-to($tablet-sm) {
     height: 52%;
+    top: 100px;
   }
   @include respond-to($desktop-sm) {
     height: 56%;
@@ -42,7 +39,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  opacity: .5;
+  // opacity: .5;
   @include respond-to($desktop-sm) {
     height: 35%;
   }
