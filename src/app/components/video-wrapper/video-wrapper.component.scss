@@ -2,45 +2,61 @@
 @import "../../../scss/mixins";
 .nav-wrapper {
   width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 2;
 }
 // Home Container Styles
 .home-container {
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  position: relative;
 }
 .content-wrapper {
-  background-color: yellow;
-  position: absolute;
-  top: 70px;
-  left: 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
   width: 100%;
-  height: 46%;
+  overflow: hidden;
+  @include respond-to($desktop-sm) {
+    height: 65%;
+  }
+}
+.video-confirm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-player {
+  height: 100%;
+  width: 100%;
+}
+.main-video {
+  height: 150px;
+  width: 100%;
   @include respond-to($phone-md) {
-    height: 50%;
+    height: 200px;
+  }
+  @include respond-to($phone-lg) {
+    height: 250px;
   }
   @include respond-to($tablet-sm) {
-    height: 52%;
-    top: 100px;
+    height: 300px;
   }
-  @include respond-to($desktop-sm) {
-    height: 56%;
+  @include respond-to($tablet-lg) {
+    height: 350px;
+  }
+  @include respond-to($desktop-md) {
+    height: 400px;
   }
 }
 .chat-wrapper {
   width: 100%;
   height: 40%;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  // opacity: .5;
   @include respond-to($desktop-sm) {
     height: 35%;
   }
@@ -82,8 +98,9 @@
 //   }
 // }
 // Content Wrapper Styles
-.content-wrapper {
-}
+
+
+
 // Video Wrapper Styles
 // .video-player {
 //   @include size(100%, 200px);
