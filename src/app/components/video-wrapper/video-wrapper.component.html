@@ -12,14 +12,14 @@
   
     <!-- Ready Content/Rotate Device content -->
     <div class="video-confirm-btn" *ngIf="!interactionConfirmed">
-      <button mat-raised-button color="primary" class="watch-btn" (click)="confirmInteraction()">
+      <button class="watch-btn toggle-btn" (click)="confirmInteraction()">
         Ready to watch?
       </button>
     </div>
 
     <!-- Video Player -->
-    <div *ngIf="interactionConfirmed">
-      <div class="video-player" *ngFor="let key of vids | keys; let i = index" [hidden]="i != selectedVidIndex">
+    <div *ngIf="interactionConfirmed" class="video-player">
+      <div *ngFor="let key of vids | keys; let i = index" [hidden]="i != selectedVidIndex">
         <video class="main-video" loop playsinline>
           <source type="video/mp4" [src]="vids[key]">
             Your browser does not support HTML5 video tags. Please use a newer browser.

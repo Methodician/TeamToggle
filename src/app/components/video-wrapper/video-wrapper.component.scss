@@ -13,7 +13,10 @@
   width: 100vw;
 }
 .content-wrapper {
-  background-color: black;
+  background-image: url('../../../assets/controller.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,20 +29,36 @@
   }
 }
 .video-confirm-btn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.5);
+}
+
+.watch-btn {
+  padding: 10px 20px !important;
+  font-size: 14px !important;
 }
 
 .video-player {
   height: 100%;
   width: 100%;
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main-video {
-  height: 150px;
+  height: 250px;
   width: 100%;
+  z-index: 20;
   @include respond-to($phone-md) {
-    height: 200px;
+    height: 275px;
   }
   @include respond-to($phone-lg) {
-    height: 250px;
+    height: 300px;
   }
   @include respond-to($tablet-sm) {
     height: 300px;
@@ -68,22 +87,22 @@
   @include respond-to($tablet-sm) {
     padding: 15px 5px;
   }
-  .toggle-btn {
-    color: $off-white;
-    border: 2px solid $primary;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 12px;
-    cursor: pointer;
-    margin: 2.5px 0;
-    transition: background-color ease-in-out .3s;
-    transition: border-color ease-in-out .3s;
-    background-color: rgba(0,0,0,0);
-    &:hover {
-      background-color: rgba(178,255,89,.3);
-      border: 2px solid $accent;
-      color: white;
-    }
+}
+.toggle-btn {
+  color: $off-white;
+  border: 2px solid $primary;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 2.5px 0;
+  transition: background-color ease-in-out .4s;
+  transition: border ease-in-out .5s;
+  background-color: rgba(0,0,0,0);
+  &:hover {
+    background-color: rgba(178,255,89,.3);
+    border: 2px solid $accent;
+    color: white;
   }
 }
 .fs-btn {
@@ -92,8 +111,8 @@
   right: 10px;
   border-radius: 50%;
   border: 2px solid $primary;
-  transition: background-color ease-in-out .3s;
-  transition: border-color ease-in-out .3s;
+  transition: background-color ease-in-out .4s;
+  transition: border ease-in-out .5s;
   background-color: rgba(0,0,0,0);
   color: $off-white;
   display: flex;
