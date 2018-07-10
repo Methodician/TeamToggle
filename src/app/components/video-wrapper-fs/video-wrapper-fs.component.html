@@ -6,12 +6,17 @@
       <source type="video/mp4" [src]="vids[key]"> 
       Your browser does not support HTML5 video tags. Please use a newer browser.
     </video>
-    <div class="fs-toggle-wrapper" *ngIf="interactionConfirmed">
-      <button class="toggle-btn" *ngFor="let key of vids | keys; let i = index" (click)="pickVid(i)">
-        {{key}}
-      </button>
-    </div>
   </div>
+
+  <div class="fs-toggle-wrapper">
+    <button class="toggle-btn" *ngFor="let key of vids | keys; let i = index" (click)="pickVid(i)">
+      {{key}}
+    </button>
+  </div>
+
+  <button class="fs-btn" (click)="toggleFsMode()">
+    <i class="material-icons">aspect_ratio</i>
+  </button>
   
 </div>
 
