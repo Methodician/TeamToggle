@@ -2,7 +2,7 @@
 @import "../../../scss/mixins";
 // Main Chat Container
 .chat-container {
-  background-color: gray;
+  background-color: $dark-grey;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
@@ -37,7 +37,8 @@
   overflow-y: scroll;
   padding: 10px 5px 5px 5px;
   margin: 10px 0;
-  background-color: lightgray;
+  background-color: black;
+  border-radius: 5px;
   @include respond-to($phone-lg) {
     font-size: 12px;
   }
@@ -79,7 +80,7 @@
   p {
     font-size: 8px;
     line-height: 12px;
-    // color: $off-white;
+    color: $off-white;
     margin: 0;
     @include respond-to($phone-lg) {
       font-size: 10px;
