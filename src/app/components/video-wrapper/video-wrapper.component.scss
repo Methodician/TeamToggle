@@ -7,7 +7,6 @@
 .home-container {
   box-sizing: border-box;
   overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -21,15 +20,14 @@
   height: 60%;
   width: 100%;
   overflow: hidden;
+  position: relative;
   @include respond-to($desktop-sm) {
     height: 65%;
   }
 }
 .video-confirm-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
+
 .video-player {
   height: 100%;
   width: 100%;
@@ -51,6 +49,41 @@
   }
   @include respond-to($desktop-md) {
     height: 400px;
+  }
+}
+// Player Toggle Button Styles
+.toggle-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  @include respond-to($phone-md) {
+    padding: 10px 5px;
+  }
+  @include respond-to($tablet-sm) {
+    padding: 15px 5px;
+  }
+  .toggle-btn {
+    color: $off-white;
+    border: 2px solid $primary;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 2.5px 0;
+    transition: background-color ease-in-out .3s;
+    transition: border-color ease-in-out .3s;
+    background-color: rgba(0,0,0,0);
+    &:hover {
+      background-color: rgba(178,255,89,.3);
+      border: 2px solid $accent;
+      color: white;
+    }
   }
 }
 .chat-wrapper {
