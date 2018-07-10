@@ -33,7 +33,7 @@
     </div>
 
     <!-- Full screen button -->
-    <button class="fs-btn" *ngIf="interactionConfirmed">
+    <button class="fs-btn" *ngIf="interactionConfirmed" (click)="toggleFsMode()">
       <i class="material-icons">aspect_ratio</i>
     </button>
 
