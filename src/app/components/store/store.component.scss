@@ -11,7 +11,10 @@
 // Hero Container
 .store-hero {
   @include size(100%, 200px);
-  background-color: orchid;
+  background-image: url('../../../assets/banner-ad-1.jpg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   color: white;
   @include respond-to($tablet-sm) {
     height: 250px;
@@ -62,15 +65,14 @@
 .buy-btn {
   color: $off-white;
 }
-// Ad Space 
-.ad-space {
-  @include size(100%, 100px);
-  background-color: cyan;
-  color: white;
+.banner-ad {
+  height: 75px;
+  width: 100%;
+  @include respond-to($phone-md) {
+  }
+  @include respond-to($phone-lg) {
+  }
   @include respond-to($tablet-sm) {
     height: 125px;
-  }
-  @include respond-to($tablet-lg) {
-    height: 150px;
   }
 }
