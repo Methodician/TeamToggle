@@ -27,7 +27,6 @@ export class VideoWrapperFSComponent implements AfterViewInit {
 
   toggleFsMode() {
     const currentTime = this.videoArray[this.selectedVidIndex].currentTime;
-    console.log('time at tiggle', currentTime);
     this.videoSvc.setCurrentTime(currentTime);
     this.videoArray[this.selectedVidIndex].pause();
     this.videoSvc.toggleFsMode();
@@ -39,10 +38,8 @@ export class VideoWrapperFSComponent implements AfterViewInit {
 
   trackCurrentTime() {
     this.videoSvc.currentTime.subscribe(time => {
-      console.log('fs time', time);
       this.currentTime = time;
       setTimeout(() => {
-        console.log('about to play at time', this.currentTime);
         this.videoArray[this.selectedVidIndex].play();
         this.videoArray[this.selectedVidIndex].currentTime = this.currentTime;
       }, 100);

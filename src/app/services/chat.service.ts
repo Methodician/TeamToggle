@@ -51,7 +51,6 @@ export class ChatService {
   }
 
   getRandomUser() {
-    console.log('getRandomUser() was called');
     const query = this.rtdb.list('users', ref => ref.orderByChild('active').equalTo(false)).snapshotChanges().pipe(
       map(users => users.map(user => {
         const data = user.payload.val();

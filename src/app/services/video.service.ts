@@ -24,7 +24,6 @@ export class VideoService {
   }
 
   setCurrentTime(time: number) {
-    console.log('setting time to', time);
     this.currentTime.next(time);
   }
 
