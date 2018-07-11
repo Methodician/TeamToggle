@@ -32,7 +32,6 @@
 }
 .logo {
   @include size(40px);
-  border: $tb-red;
   @include respond-to($phone-md) {
     @include size(45px);
   }
