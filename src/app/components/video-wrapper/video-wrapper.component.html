@@ -1,20 +1,16 @@
 <div class="home-container">
-
   <!-- Nav Bar Component -->
   <div class="nav-wrapper">
     <app-navbar></app-navbar>
   </div>
-
   <!-- Video Player, Toggle Buttons, Ad Space -->
   <div class="content-wrapper">
-  
     <!-- Ready Content/Rotate Device content -->
     <div class="video-confirm-btn" *ngIf="!interactionConfirmed">
       <button class="watch-btn toggle-btn" (click)="confirmInteraction()">
         Ready to watch?
       </button>
     </div>
-
     <!-- Video Player -->
     <div *ngIf="interactionConfirmed" class="video-player">
       <div *ngFor="let key of vids | keys; let i = index" [hidden]="i != selectedVidIndex">
@@ -24,24 +20,19 @@
         </video>
       </div>
     </div>
-
     <!-- Change Streamer Buttons -->
     <div class="toggle-wrapper" *ngIf="interactionConfirmed">
       <button class="toggle-btn" *ngFor="let key of userNames | keys; let i = index" (click)="pickVid(i)" [ngClass]="{'btn-selected' : selectedVidIndex === i}">
         {{userNames[key]}}
       </button>
     </div>
-
     <!-- Full screen button -->
     <button class="fs-btn" *ngIf="interactionConfirmed" (click)="toggleFsMode()">
       <i class="material-icons">aspect_ratio</i>
     </button>
-
   </div>
-
   <!-- Chat Wrapper -->
   <div class="chat-wrapper">
     <app-chat-box></app-chat-box>
   </div>
-
 </div>

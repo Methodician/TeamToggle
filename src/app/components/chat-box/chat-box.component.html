@@ -1,5 +1,4 @@
 <div class="chat-container">
-
   <!-- Chat Header -->
   <div class="chat-header-wrapper">
     <div class="chat-header">
@@ -9,7 +8,6 @@
       {{ currentUser.name }}
     </div>
   </div>
-
   <!-- Chat Box with global messages -->
   <div class="chat-box" #chatbox>
     <div class="chat-text" *ngFor="let chat of chats">
@@ -21,7 +19,6 @@
       </p>
     </div>
   </div>
-  
   <!-- Chat Textarea Input -->
   <div class="chat-input-wrapper">
     <mat-form-field class="chat-input" color="primary">
@@ -32,5 +29,4 @@
       Chat
     </button>
   </div>
-  
 </div>

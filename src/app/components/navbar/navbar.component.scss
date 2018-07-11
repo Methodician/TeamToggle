@@ -15,7 +15,6 @@
     padding: 0 20px;
   }
 }
-
 .banner-ad {
   height: 40px;
   width: 175px;
@@ -31,7 +30,6 @@
     width: 400px;
   }
 }
-
 .logo {
   @include size(40px);
   border: $tb-red;
@@ -45,7 +43,6 @@
     @include size(60px);
   }
 }
-
 .store-btn {
   @include size(40px);
   i {

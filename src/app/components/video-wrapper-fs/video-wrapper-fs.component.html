@@ -1,22 +1,20 @@
-<!-- Testing full-screen -->
 <div class="fs-wrapper">
-
+  <!-- Main Video -->
   <div class="video-player-fs" *ngFor="let key of vids | keys; let i = index" [hidden]="i != selectedVidIndex">
     <video class="main-video" loop playsinline>
       <source type="video/mp4" [src]="vids[key]"> 
       Your browser does not support HTML5 video tags. Please use a newer browser.
     </video>
   </div>
-
+  <!-- Streamer Buttons -->
   <div class="fs-toggle-wrapper">
     <button class="toggle-btn" *ngFor="let key of userNames | keys; let i = index" (click)="pickVid(i)" [ngClass]="{'btn-selected' : selectedVidIndex === i}">
       {{userNames[key]}}
     </button>
   </div>
-
+  <!-- Fullscreen Button -->
   <button class="fs-btn" (click)="toggleFsMode()">
     <i class="material-icons">aspect_ratio</i>
   </button>
-  
 </div>
 
