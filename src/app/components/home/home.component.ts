@@ -12,6 +12,11 @@ export class HomeComponent {
 
   constructor(private videoSvc: VideoService) {
     this.videoSvc.fsMode.subscribe(mode => this.fsMode = mode);
+    setTimeout(() => {
+      if (confirm('Please help us launch the real app by completing our survey.')) {
+        location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd5d2OusldAfpsRkwVwfo08qGQKvGzy79ZHzinYyrgZdCy62g/viewform';
+      }
+    }, 120000);
   }
 
 
