@@ -106,6 +106,10 @@
     color: white;
   }
 }
+.btn-selected {
+  background-color: rgba(178,255,89,.3);
+  border: 2px solid $accent;
+}
 // Fullscreen Button
 .fs-btn {
   position: absolute;

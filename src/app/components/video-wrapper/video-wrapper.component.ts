@@ -19,6 +19,12 @@ export class VideoWrapperComponent implements AfterViewInit {
     vid3: 'https://firebasestorage.googleapis.com/v0/b/team-toggle.appspot.com/o/Menace_View.mp4?alt=media&token=0ffa1bf3-dcaa-4d81-97e4-6c2f75ddcab6',
     vid4: 'https://firebasestorage.googleapis.com/v0/b/team-toggle.appspot.com/o/Nerds_View.mp4?alt=media&token=a9018082-6e7a-41f0-b917-ffc65c694865',
   };
+  userNames = {
+    user1: 'HotDog',
+    user2: 'nerdlikeme',
+    user3: 'Menace5051',
+    user4: 'PinkPanther221'
+  };
 
   constructor(private videoSvc: VideoService) {
     this.videoSvc.selectedVideo.subscribe(index => this.selectedVidIndex = index);

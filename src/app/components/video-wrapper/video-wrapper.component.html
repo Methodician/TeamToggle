@@ -27,8 +27,8 @@
 
     <!-- Change Streamer Buttons -->
     <div class="toggle-wrapper" *ngIf="interactionConfirmed">
-      <button class="toggle-btn" *ngFor="let key of vids | keys; let i = index" (click)="pickVid(i)">
-        {{key}}
+      <button class="toggle-btn" *ngFor="let key of userNames | keys; let i = index" (click)="pickVid(i)" [ngClass]="{'btn-selected' : selectedVidIndex === i}">
+        {{userNames[key]}}
       </button>
     </div>
 
