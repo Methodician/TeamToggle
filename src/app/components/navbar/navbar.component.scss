@@ -32,6 +32,7 @@
 }
 .logo {
   @include size(40px);
+  cursor: pointer;
   @include respond-to($phone-md) {
     @include size(45px);
   }

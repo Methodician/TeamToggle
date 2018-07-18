@@ -3,7 +3,23 @@
   <img class="logo" src="../../../assets/logo.svg" alt="Team Toggle Logo" routerLink="/"/>
   <img class="banner-ad" src="../../../assets/banner-ad-2.jpg" alt="ad space"/>
   <!-- Store Button -->
-  <button class="store-btn" mat-fab color="primary" routerLink="/store">
-    <i class="material-icons">store</i>
+  <button class="store-btn" mat-fab color="primary" [matMenuTriggerFor]="menu">
+    <i class="material-icons">menu</i>
   </button>
+
 </div>
+<!-- Drop Down Menu -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/">
+    <mat-icon>recent_actors</mat-icon>
+    <span>Currently Watching</span>
+  </button>
+  <button mat-menu-item routerLink="/store">
+    <mat-icon>store</mat-icon>
+    <span>Store</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>edit</mat-icon>
+    <span>Survey</span>
+  </button>
+</mat-menu>
